@@ -15,7 +15,7 @@ namespace Calculator
     {
         private Double result = 0;
         private String operation = "";
-        private bool isOperationPerformed = false; //do czyszczenia textboxu i wpisanie nowej wartosci
+        private bool isOperationPerformed = false; //do czyszczenia textboxu i wpisanie nowej wartości
         bool isNumberPerformed = false;            //aby uniknac konfliktow
         bool isDivideByZeroPerformed = false;      //zatrzymanie dzialania po dzieleniu przez zero
 
