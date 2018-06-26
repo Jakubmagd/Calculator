@@ -15,12 +15,12 @@ namespace Calculator
     {
         private Double result = 0;
         private String operation = "";
-        private bool isOperationPerformed = false; //do czyszczenia textboxu i wpisanie nowej wartości
-        bool isNumberPerformed = false;            //aby uniknac konfliktow
-        bool isDivideByZeroPerformed = false;      //zatrzymanie dzialania po dzieleniu przez zero
+        private bool isOperationPerformed = false; ///do czyszczenia textboxu i wpisanie nowej wartości
+        bool isNumberPerformed = false;            ///aby uniknac konfliktow
+        bool isDivideByZeroPerformed = false;      ///zatrzymanie dzialania po dzieleniu przez zero
 
 
-        // sektory
+        /// sektory
         public double Result
         {
             get
@@ -118,7 +118,7 @@ namespace Calculator
 
                     if (!(textBoxResult.Text.Contains(".")))
                     {
-                        if (textBoxResult.Text == "")  // dodaj zero przed przecinkiem
+                        if (textBoxResult.Text == "")  /// dodaj zero przed przecinkiem
                         {
                             textBoxResult.Text = "0" + button.Text;
                         }
@@ -129,7 +129,7 @@ namespace Calculator
 
                     }
                 }
-                else if (button.Text == "0")   //aby uniknac za duzo zer przed przecinkiem
+                else if (button.Text == "0")   ///aby uniknac za duzo zer przed przecinkiem
                 {
                     if (textBoxResult.Text != "0")
                     {
@@ -138,7 +138,7 @@ namespace Calculator
                 }
                 else
                 {
-                    if (textBoxResult.Text == "0") //aby uniknac zer przed liczba
+                    if (textBoxResult.Text == "0") ///aby uniknac zer przed liczba
                     {
                         textBoxResult.Text = button.Text;
                     }
@@ -175,7 +175,7 @@ namespace Calculator
                     case "/":
                         if (Double.Parse(textBoxResult.Text) == 0)
                         {
-                            MessageBox.Show("NIE MOZNA DZIELIC PRZEZ ZERO");
+                            MessageBox.Show("NIE MOZNA DZIELIC PRZEZ ZERO"); ///informacja dzielenia przez 0
                             buttonC.PerformClick();
                             IsDivideByZeroPerformed = true;
                             break;
@@ -220,7 +220,7 @@ namespace Calculator
 
                 else
                 {
-                    Operation = button.Text;       // operator jest wybrany
+                    Operation = button.Text;       /// operator jest wybrany
 
                     try
                     {
