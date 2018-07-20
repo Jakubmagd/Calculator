@@ -8,19 +8,38 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+
 namespace Calculator
 {
+    /// <summary>
+    /// Głowna funkcjonalność programu
+    /// </summary>
     public partial class Form1 : Form
 
     {
         private Double result = 0;
         private String operation = "";
-        private bool isOperationPerformed = false; ///do czyszczenia textboxu i wpisanie nowej wartości
-        bool isNumberPerformed = false;            ///aby uniknac konfliktow
-        bool isDivideByZeroPerformed = false;      ///zatrzymanie dzialania po dzieleniu przez zero
+
+        /// <summary>
+        /// do czyszczenia textboxu i wpisanie nowej wartości
+        /// </summary>
+        private bool isOperationPerformed = false;
+
+        /// <summary>
+        /// aby uniknac konfliktow
+        /// </summary>      
+        bool isNumberPerformed = false;
+
+        /// <summary>
+        /// zatrzymanie dzialania po dzieleniu przez zero
+        /// </summary>
+        bool isDivideByZeroPerformed = false;
 
 
+        /// <summary>
         /// sektory
+        /// </summary>
         public double Result
         {
             get
@@ -34,6 +53,9 @@ namespace Calculator
             }
         }
 
+        /// <summary>
+        /// Asektory wybrania znaku równości
+        /// </summary>
         public string Operation
         {
             get
@@ -47,6 +69,9 @@ namespace Calculator
             }
         }
 
+        /// <summary>
+        /// Akcesory wybrania operatora matematycznego
+        /// </summary>
         public bool IsOperationPerformed
         {
             get
@@ -60,6 +85,9 @@ namespace Calculator
             }
         }
 
+        /// <summary>
+        /// Akcesory wybrania liczby
+        /// </summary>
         public bool IsNumberPerformed
         {
             get
@@ -73,6 +101,9 @@ namespace Calculator
             }
         }
 
+        /// <summary>
+        /// Akcesory dizelenia przez 0 wywoływane w chwili wykoanaia takiego przypadku w programie
+        /// </summary>
         public bool IsDivideByZeroPerformed
         {
             get
@@ -85,18 +116,25 @@ namespace Calculator
                 isDivideByZeroPerformed = value;
             }
         }
-        //
 
 
+        /// <summary>
+        /// Połączenie modelu apliakcji oraz programowania
+        /// </summary>
         public Form1()
         {
 
-            System.Globalization.CultureInfo ci = new System.Globalization.CultureInfo("en-US"); 
+            System.Globalization.CultureInfo ci = new System.Globalization.CultureInfo("en-US");
             System.Threading.Thread.CurrentThread.CurrentCulture = ci;
 
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Funkcja odpowiadająca za otrzymanie liczby po wybraniu klawisza
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void numberButtonClick(object sender, EventArgs e)
         {
 
@@ -113,7 +151,7 @@ namespace Calculator
 
             if (textBoxResult.Text.Length <= 15)
             {
-                if (button.Text == ".") 
+                if (button.Text == ".")
                 {
 
                     if (!(textBoxResult.Text.Contains(".")))
@@ -152,6 +190,11 @@ namespace Calculator
 
         }
 
+        /// <summary>
+        /// funkcjonalności przycisków operatorów matematycznych
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void operationButtonClick(object sender, EventArgs e)
         {
             Button button = (Button)sender;
@@ -175,6 +218,7 @@ namespace Calculator
                     case "/":
                         if (Double.Parse(textBoxResult.Text) == 0)
                         {
+
                             MessageBox.Show("NIE MOZNA DZIELIC PRZEZ ZERO"); ///informacja dzielenia przez 0
                             buttonC.PerformClick();
                             IsDivideByZeroPerformed = true;
@@ -246,7 +290,11 @@ namespace Calculator
 
         }
 
-
+        /// <summary>
+        /// funkcjonalnośc przycisku czyszczący formularz
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void clearAllButtonClick(object sender, EventArgs e)
         {
 
@@ -259,6 +307,11 @@ namespace Calculator
 
         }
 
+        /// <summary>
+        /// funkcjonalnośc przycisku podwracjący znak (+ -)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void negationButtonClick(object sender, EventArgs e)
         {
 
