@@ -149,7 +149,7 @@ namespace Calculator
             }
             IsOperationPerformed = false;
 
-            if (textBoxResult.Text.Length <= 15)
+            if (textBoxResult.Text.Length <= 15) /// dlugość mniejsza lub równa niz 15 cyfr
             {
                 if (button.Text == ".")
                 {
@@ -204,16 +204,16 @@ namespace Calculator
 
                 switch (Operation)
                 {
-                    case "+":
+                    case "+": /// dodawanie
 
-                        textBoxResult.Text = (Result + Double.Parse(textBoxResult.Text)).ToString();
+                        textBoxResult.Text = (Result + Double.Parse(textBoxResult.Text)).ToString(); ///odejmowanie
                         break;
                     case "-":
 
-                        textBoxResult.Text = (Result - Double.Parse(textBoxResult.Text)).ToString();
+                        textBoxResult.Text = (Result - Double.Parse(textBoxResult.Text)).ToString(); /// mnozenie
                         break;
                     case "x":
-                        textBoxResult.Text = (Result * Double.Parse(textBoxResult.Text)).ToString();
+                        textBoxResult.Text = (Result * Double.Parse(textBoxResult.Text)).ToString(); /// dzielenie
                         break;
                     case "/":
                         if (Double.Parse(textBoxResult.Text) == 0)

@@ -65,7 +65,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="kalkulator dox.rar" />
+    <None Include="kalk dox.rar" />
+    <None Include="Projekt_Programowanie_Arkadiusz_Kalita_w57448_Jakub_Magdoń_w57447 %281%29.docx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
